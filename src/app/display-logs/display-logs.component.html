@@ -1,0 +1,51 @@
+<h3>
+  Logs
+</h3>
+
+<div *ngIf="logManagerService?.getErrorMessages()?.length > 0" class="alert alert-danger">
+  <h5>
+    Error(s)
+  </h5>
+
+  <ul>
+    <li *ngFor="let message of logManagerService.getErrorMessages()">{{ message }}</li>
+  </ul>
+
+  <button type="button" (click)="clearErrorLogs()" class="btn btn-secondary btn-sm">Clear</button>
+</div>
+
+<div *ngIf="logManagerService?.getWarningMessages()?.length > 0" class="alert alert-warning">
+  <h5>
+    Warning(s)
+  </h5>
+
+  <ul>
+    <li *ngFor="let message of logManagerService.getWarningMessages()">{{ message }}</li>
+  </ul>
+
+  <button type="button" (click)="clearWarningLogs()" class="btn btn-secondary btn-sm">Clear</button>
+</div>
+
+<div *ngIf="logManagerService?.getInformationMessages()?.length > 0" class="alert alert-info">
+  <h5>
+    Information(s)
+  </h5>
+
+  <ul>
+    <li *ngFor="let message of logManagerService.getInformationMessages()">{{ message }}</li>
+  </ul>
+
+  <button type="button" (click)="clearInformationLogs()" class="btn btn-secondary btn-sm">Clear</button>
+</div>
+
+<div *ngIf="logManagerService?.getDebugMessages()?.length > 0" class="alert alert-primary">
+  <h5>
+    Debug(s)
+  </h5>
+
+  <ul>
+    <li *ngFor="let message of logManagerService.getDebugMessages()">{{ message }}</li>
+  </ul>
+
+  <button type="button" (click)="clearDebugLogs()" class="btn btn-secondary btn-sm">Clear</button>
+</div>

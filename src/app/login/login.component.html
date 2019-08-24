@@ -1,0 +1,83 @@
+<div class="col-md-8 offset-md-2">
+  <h3>
+    Login
+  </h3>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <form
+        (ngSubmit)="onSubmit()"
+        #myForm="ngForm"
+        autocomplete="off"
+        novalidate
+      >
+        <div class="form-horizontal">
+          <div class="form-group">
+            <label for="email" class="control-label col-sm-3">Email</label>
+            <div class="col-sm-9">
+              <input
+                type="text"
+                id="email"
+                name="email"
+                class="form-control"
+                [(ngModel)]="user.email"
+                #email="ngModel"
+                required
+              />
+              <div
+                class="alert alert-danger"
+                *ngIf="email.invalid && email.dirty"
+              >
+                <span class="help-block" *ngIf="email?.errors?.required"
+                  >The email value is required!</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="password" class="control-label col-sm-3"
+              >Password</label
+            >
+            <div class="col-sm-9">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="form-control"
+                [(ngModel)]="user.password"
+                #password="ngModel"
+                required
+              />
+              <div
+                class="alert alert-danger"
+                *ngIf="password.invalid && password.dirty"
+              >
+                <span class="help-block" *ngIf="password?.errors?.required"
+                  >The password value is required!</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-9 col-sm-offset-3">
+              <!-- <button type="submit" class="btn btn-success" [disabled]="!myForm.form.valid">Login</button> -->
+              <button type="submit" class="btn btn-success">Login</button>
+              &nbsp;
+              <button
+                type="button"
+                class="btn btn-secondary"
+                (click)="myForm.reset()"
+              >
+                Reset
+              </button>
+              &nbsp;
+              <a [routerLink]="['/register']">Register</a>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

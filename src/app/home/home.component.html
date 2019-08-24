@@ -1,0 +1,21 @@
+<ng-container *ngIf="post">
+  <div class="row">
+    <div class="col-md-12">
+      <img
+      width="100%"
+        src="https://via.placeholder.com/1080x100?text=Can We Really Trust Digital Banks?"
+        class="rounded float-left"
+      />
+    </div>
+    <h5 class="title">
+      Can We Really Trust Digital Banks?
+    </h5>
+    <div class="col-md-12">
+      {{ post.passage }}
+    </div>
+    <div class="col-md-12" *ngIf="!post.is_complete_passage">
+      <a href="/register"><h5 class="register-to-read">Register to read full content</h5></a>
+    </div>
+  </div>
+  <hr />
+</ng-container>

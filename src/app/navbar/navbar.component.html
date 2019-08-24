@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a routerLink="/home" class="navbar-brand">My MVC Application</a>
+
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a routerLink="/home" routerLinkActive="active" class="nav-link">
+          Home
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+
+      <li class="nav-item active">
+        <a routerLink="/about" routerLinkActive="active" class="nav-link">
+          About
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+
+      <li class="nav-item active">
+        <a routerLink="/get-users" routerLinkActive="active" class="nav-link" *ngIf="authenticationService.currentUser && authenticationService.currentUser.role_id == 1">
+          User List
+          <span class="sr-only">(current)</span></a
+        >
+      </li>
+
+      <li class="nav-item active">
+        <a
+          routerLink="/display-logs"
+          routerLinkActive="active"
+          class="nav-link"
+        >
+          Logs
+          <span class="sr-only">(current)</span></a
+        >
+      </li>
+
+      <li class="nav-item active">
+        <a routerLink="/login" routerLinkActive="active" class="nav-link">
+          <span *ngIf="!authenticationService.currentUser">Login</span>
+          <span class="sr-only">(current)</span></a
+        >
+      </li>
+
+      <li class="nav-item active">
+        <button
+          *ngIf="authenticationService.currentUser"
+          type="button"
+          class="btn nav-link"
+          (click)="logout()"
+        >
+          Logout
+        </button>
+      </li>
+    </ul>
+  </div>
+</nav>

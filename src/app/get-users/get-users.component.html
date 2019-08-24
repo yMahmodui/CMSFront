@@ -1,0 +1,20 @@
+<div class="col-md-12">
+  <h2>Registred Users</h2>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th class="hidden">Id</th>
+        <th>Email</th>
+        <th>Register Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td class="hidden">{{user.id}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.register_date}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
