@@ -57,6 +57,9 @@
                   >The password value is required!</span
                 >
               </div>
+              <div class="alert alert-danger" *ngIf="error?.has_error">
+                <span class="help-block">{{ error?.error_message }}</span>
+              </div>
             </div>
           </div>
 

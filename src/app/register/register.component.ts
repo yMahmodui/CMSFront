@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Router, ActivatedRoute } from "@angular/router";
 import { AuthenticationService } from "../services/authentication.service";
 import { User } from "../models/user";
+import { Error } from "../models/error";
 import { HttpRequestResult } from "../models/http-request-result";
 
 @Component({
@@ -19,6 +20,7 @@ export class RegisterComponent implements OnInit {
   }
 
   public user: User;
+  public error: Error;
   public returnUrl: string;
   public result: HttpRequestResult<User>;
 
@@ -34,6 +36,8 @@ export class RegisterComponent implements OnInit {
           if (this.result.is_successful) {
             this.router.navigate(["/"]);
           }
+
+          this.error = { has_error: true, error_message: result.error_message };
         },
         error => {}
       );
