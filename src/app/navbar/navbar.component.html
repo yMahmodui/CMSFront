@@ -30,6 +30,13 @@
       </li>
 
       <li class="nav-item active">
+        <a routerLink="/create" routerLinkActive="active" class="nav-link">
+          Create
+          <span class="sr-only">(current)</span>
+        </a>
+      </li>
+
+      <li class="nav-item active">
         <a routerLink="/get-users" routerLinkActive="active" class="nav-link" *ngIf="authenticationService.currentUser && authenticationService.currentUser.role_id == 1">
           User List
           <span class="sr-only">(current)</span></a

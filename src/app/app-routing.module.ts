@@ -12,6 +12,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { TestLogManagerComponent } from './test-log-manager/test-log-manager.component';
 import { RegisterComponent } from './register/register.component';
 import { GetUsersComponent } from './get-users/get-users.component';
+import { CreateComponent } from './create/create.component';
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
@@ -55,6 +56,11 @@ const routes: Routes = [
     path: 'get-users',
     component: GetUsersComponent,
     canActivate: [AuthGuard,],
+  },
+
+  {
+    path: 'create',
+    component: CreateComponent,
   },
 
   {
